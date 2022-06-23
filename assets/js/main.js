@@ -64,7 +64,11 @@ function cgPreview() {
     preview = document.querySelector('.preview');
     inps.forEach((val) => {
         // console.log(val.value)
-        html += val.value + ' ';
+        if (ty == 0) {  
+                html += '(' + val.value + ') ';
+        } else {           
+                html += val.value + ' ';
+        }
     });
     preview.innerHTML = html;
 }
