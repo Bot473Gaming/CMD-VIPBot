@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMD - VIPBot</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="row">
+            <select id="type" class="size">
+                <option value="0">Bet</option>
+                <option value="1">Event</option>
+                <option value="2">Đấu Giá</option>
+            </select>
+            <div class="inps">
+                <input type="text" name="1" id="1" class="size inp" placeholder="Title" oninput="cgPreview()">
+                <input type="text" name="1" id="1" class="size inp" placeholder="Rate" oninput="cgPreview()">
+                <button class="add-btn" onclick="btnAdd()">+</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="row">
+            <div id="pr" class="preview size">!vipbet</div>
+            <button class="size btn" onclick="copyBtn(pr)">Copy</button>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
