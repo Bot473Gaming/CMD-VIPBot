@@ -62,9 +62,9 @@ function cgPreview() {
     var inps = document.querySelector('.inps').querySelectorAll('.inp');
     let html = sl_in[ty].typ + ' ';
     preview = document.querySelector('.preview');
-    inps.forEach((val) => {
+    inps.forEach((val, index) => {
         // console.log(val.value)
-        if (ty == 0) {  
+        if (ty == 0 && inedx % 2 == 0) {  
                 html += '(' + val.value + ') ';
         } else {           
                 html += val.value + ' ';
