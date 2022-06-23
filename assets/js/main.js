@@ -64,10 +64,10 @@ function cgPreview() {
     preview = document.querySelector('.preview');
     inps.forEach((val, index) => {
         // console.log(val.value)
-        if (ty == 0 && inedx % 2 == 0) {  
-                html += '(' + val.value + ') ';
-        } else {           
-                html += val.value + ' ';
+        if (ty == 0 && index % 2 == 0) {
+            html += '(' + val.value + ') ';
+        } else {
+            html += val.value + ' ';
         }
     });
     preview.innerHTML = html;
