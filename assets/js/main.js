@@ -1,14 +1,14 @@
 var type = document.querySelector('#type');
 var sl_in = [{
         typ: '!vipbet',
-        inp: ['inp', 'inp'],
-        phr: ['Title', 'Rate'],
+        inp: ['inp', 'inp', 'inp', 'time'],
+        phr: ['Title', 'Rate', 'Time', ''],
         add_btn: true
     },
     {
         typ: '!event',
-        inp: ['sl', 'inp', 'inp', 'inp'],
-        phr: ['', 'Time(s, m, h, d)', 'Phần thưởng', '(Điều kiện)'],
+        inp: ['sl', 'inp', 'time', 'inp', 'inp'],
+        phr: ['', 'Time', '', 'Phần thưởng', '(Điều kiện)'],
         add_btn: false
     },
     {
@@ -55,6 +55,13 @@ function codeAdd(val, ph) {
             <option value="lx">Lì xì</option>
         </select>
         `
+        case 'time':
+            return `<select id="" class="size inp" onChange="cgPreview()">
+            <option value="s">Giây</option>
+            <option value="m">Phút</option>
+            <option value="h">Giờ</option>
+            <option value="d">Ngày</option>
+        </select>`
     }
 }
 
@@ -79,7 +86,7 @@ function btnAdd() {
     for (let i in sl_in[ty].inp) {
         html += codeAdd(sl_in[ty].inp[i], sl_in[ty].phr[i]);
     }
-    html += '<button class="add-btn" onclick="btnAdd()">+</button>';
+    html += `<button class="add-btn" onclick="btnAdd()">+</button>`;
     // console.log(inps.innerHTML)
     inps.innerHTML = inps.innerHTML.replace('<button class="add-btn" onclick="btnAdd()">+</button>', '') + html;
 }
