@@ -2,7 +2,7 @@ var type = document.querySelector('#type');
 var sl_in = [{
         typ: '!vipbet',
         inp: ['inp', 'inp', 'inp', 'time'],
-        phr: ['Title', 'Rate', 'Time', ''],
+        phr: ['Title', 'Rate', 'Time', 'end'],
         add_btn: true
     },
     {
@@ -56,7 +56,7 @@ function codeAdd(val, ph) {
         </select>
         `
         case 'time':
-            return `<select id="" class="size inp" onChange="cgPreview()">
+            return `<select id="" class="size inp time" onChange="cgPreview()">
             <option value="s">Giây</option>
             <option value="m">Phút</option>
             <option value="h">Giờ</option>
@@ -88,6 +88,7 @@ function btnAdd() {
     }
     html += `<button class="add-btn" onclick="btnAdd()">+</button>`;
     // console.log(inps.innerHTML)
+    console.log(document.querySelector('.time').remove());
     inps.innerHTML = inps.innerHTML.replace('<button class="add-btn" onclick="btnAdd()">+</button>', '') + html;
 }
 
